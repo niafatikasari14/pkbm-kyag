@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+:root {
+    --primary: 15 76 129; /* Biru navy */
+    --gray-50: #f9fafb;
+    --sidebar-bg: #f8fafc;
+    --sidebar-text-color: #1e293b;
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+    --border-radius: 1rem;
+}
+.card {
+    transition: all 0.3s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
