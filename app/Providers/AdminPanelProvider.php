@@ -23,7 +23,7 @@ use App\Models\Ulasan;
 
 class AdminPanelProvider extends PanelProvider
 {
-public function boot(): void
+    public function boot(): void
     {
         Filament::serving(function () {
             Filament::registerRenderHook(
@@ -38,7 +38,6 @@ public function boot(): void
             );
         });
     }
-
     public static function getNavigationBadge(): ?string
     {
         return (string) \App\Models\Ulasan::where('is_read', false)->count();
