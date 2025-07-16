@@ -69,26 +69,27 @@
 <body class="bg-light">
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg shadow-sm" style="background: linear-gradient(90deg, #2c3e50, #2a5298);">
-    <div class="container-fluid px-5">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container-fluid px-3 px-md-5">
         <!-- Logo -->
-        <a class="navbar-brand d-flex align-items-center text-white fw-semibold" href="/">
-            <img src="{{ asset('storage/logo.jpg') }}" alt="Logo" width="40" height="40" class="me-2 rounded-circle">
-            PKBM KY AGENG GIRI
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="{{ asset('storage/logo.jpg') }}" alt="Logo" width="35" height="35" class="rounded-circle me-2">
+            <span class="fw-semibold fs-6">PKBM KY AGENG GIRI</span>
         </a>
 
-        <!-- Toggle button (mobile) -->
-        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavCenter"
-                aria-controls="navbarNavCenter" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Centered Nav Items -->
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNavCenter">
-            <ul class="navbar-nav">
+        <!-- Menu Items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto text-center">
                 <li class="nav-item"><a class="nav-link text-white" href="/home_index">Home</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">About</a>
+                    <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">About</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/informasipkbm">Informasi PKBM</a></li>
                         <li><a class="dropdown-item" href="/datapendidik">Data Pendidik</a></li>
@@ -101,8 +102,7 @@
                 <li class="nav-item"><a class="nav-link text-white" href="/pendaftaran">Pendaftaran</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="/kontak">Kontak</a></li>
             </ul>
-        </div>
-
+        </div>   
         <!-- Login button (responsive) -->
         <!-- Untuk layar besar (desktop) -->
         <div class="d-none d-lg-block">
