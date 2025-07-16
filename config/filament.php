@@ -2,6 +2,10 @@
 
 return [
 
+    'providers' => [
+    App\Providers\AdminPanelProvider::class,
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Broadcasting

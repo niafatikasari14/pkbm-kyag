@@ -18,10 +18,27 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\Navigation\NavigationItem;
+use Filament\Facades\Filament;
 use App\Models\Ulasan;
 
 class AdminPanelProvider extends PanelProvider
 {
+public function boot(): void
+    {
+        Filament::serving(function () {
+            Filament::registerRenderHook(
+                'topbar.end',
+                fn (): string => '
+                    <a href="' . url('/') . '" 
+                    class="text-sm font-medium text-gray-600 hover:text-primary-600 transition ml-4"
+                    target="_blank">
+                    ← Kembali ke Website
+                    </a>
+                '
+            );
+        });
+    }
+
     public static function getNavigationBadge(): ?string
     {
         return (string) \App\Models\Ulasan::where('is_read', false)->count();
