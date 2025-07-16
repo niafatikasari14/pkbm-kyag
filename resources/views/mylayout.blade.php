@@ -69,7 +69,7 @@
 <body class="bg-light">
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+<nav class="navbar navbar-expand-lg shadow-sm" style="background: linear-gradient(90deg, #2c3e50, #2a5298);">
     <div class="container-fluid px-3 px-md-5">
         <!-- Logo -->
         <a class="navbar-brand d-flex align-items-center" href="/">
@@ -102,7 +102,7 @@
                 <li class="nav-item"><a class="nav-link text-white" href="/pendaftaran">Pendaftaran</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="/kontak">Kontak</a></li>
             </ul>
-        </div>   
+  
         <!-- Login button (responsive) -->
         <!-- Untuk layar besar (desktop) -->
         <div class="d-none d-lg-block">
@@ -119,7 +119,7 @@
                 </a>
             </li>
         </ul>
-
+    </div>
     </div>
 </nav>
 
