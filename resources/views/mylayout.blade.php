@@ -70,11 +70,11 @@
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg shadow-sm" style="background: linear-gradient(90deg, #2c3e50, #2a5298);">
-    <div class="container-fluid px-3 px-md-5">
+    <div class="container-fluid px-5">
         <!-- Logo -->
-        <a class="navbar-brand d-flex align-items-center" href="/">
-            <img src="{{ asset('storage/logo.jpg') }}" alt="Logo" width="35" height="35" class="rounded-circle me-2">
-            <span class="fw-semibold fs-6">PKBM KY AGENG GIRI</span>
+        <a class="navbar-brand d-flex align-items-center text-white fw-semibold" href="/">
+            <img src="{{ asset('storage/logo.jpg') }}" alt="Logo" width="35" height="35" class="me-2 rounded-circle">
+            PKBM KY AGENG GIRI
         </a>
 
         <!-- Toggle button -->
