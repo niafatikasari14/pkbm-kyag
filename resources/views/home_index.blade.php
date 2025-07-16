@@ -1,37 +1,52 @@
 @extends('mylayout')
 @section('content')
 
+<style>
+.carousel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+@media (max-width: 576px) {
+    .carousel-item img {
+        height: 300px; /* lebih kecil tapi tetap landscape */
+    }
+}
+</style>
+
 <!-- SLIDER BOOTSTRAP -->
-<div id="carouselSlider" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="2000">
+<div id="heroCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="{{ asset('storage/slider/1.jpg') }}" class="d-block w-100" style="height: 500px; object-fit: cover;" alt="Slider 1">
+      <img src="{{ asset('storage/slider/1.jpg') }}" class="d-block w-100" alt="Slider 1">
     </div>
     <div class="carousel-item">
-      <img src="{{ asset('storage/slider/2.jpg') }}" class="d-block w-100" style="height: 500px; object-fit: cover;" alt="Slider 2">
+      <img src="{{ asset('storage/slider/2.jpg') }}" class="d-block w-100" alt="Slider 2">
     </div>
     <div class="carousel-item">
-      <img src="{{ asset('storage/slider/3.jpg') }}" class="d-block w-100" style="height: 500px; object-fit: cover;" alt="Slider 3">
-    </div>
-        <div class="carousel-item active">
-      <img src="{{ asset('storage/slider/4.jpg') }}" class="d-block w-100" style="height: 500px; object-fit: cover;" alt="Slider 4">
+      <img src="{{ asset('storage/slider/3.jpg') }}" class="d-block w-100" alt="Slider 3">
     </div>
     <div class="carousel-item">
-      <img src="{{ asset('storage/slider/5.jpg') }}" class="d-block w-100" style="height: 500px; object-fit: cover;" alt="Slider 5">
+      <img src="{{ asset('storage/slider/4.jpg') }}" class="d-block w-100" alt="Slider 4">
     </div>
     <div class="carousel-item">
-      <img src="{{ asset('storage/slider/6.jpg') }}" class="d-block w-100" style="height: 500px; object-fit: cover;" alt="Slider 6">
+      <img src="{{ asset('storage/slider/5.jpg') }}" class="d-block w-100" alt="Slider 5">
     </div>
-        <div class="carousel-item">
-      <img src="{{ asset('storage/slider/7.jpg') }}" class="d-block w-100" style="height: 500px; object-fit: cover;" alt="Slider 7">
+    <div class="carousel-item">
+      <img src="{{ asset('storage/slider/6.jpg') }}" class="d-block w-100" alt="Slider 6">
     </div>
+    <div class="carousel-item">
+      <img src="{{ asset('storage/slider/7.jpg') }}" class="d-block w-100" alt="Slider 7">
+    </div>
+  </div>
 
-  <!-- Tombol navigasi -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlider" data-bs-slide="prev">
+  <!-- Tombol Navigasi -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Sebelumnya</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselSlider" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Berikutnya</span>
   </button>
@@ -73,6 +88,8 @@
             @endforeach
         </div>
 
+<div class="container my-5">
+<div class="row">
 <!-- Kolom Pengumuman -->
 <div class="col-md-4">
     <h3 class="mb-4">Pengumuman</h3>
@@ -129,9 +146,11 @@
         </div>
     @endforelse
 </div>
+</div>
+</div>
 
 <!-- Tentang PKBM -->
-<div class="my-5">
+<div class="my-3">
     <h3 class="mb-3 text-center">Tentang PKBM Ky Ageng Giri</h3>
     <div class="row justify-content-center">
         <div class="col-md-10">
@@ -229,53 +248,53 @@
 
 @push('scripts')
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const bulanIndonesia = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
-                                'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-        const hari = ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
+document.addEventListener("DOMContentLoaded", function () {
+    const bulanIndonesia = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+                            'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+    const hari = ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'];
 
-        const today = new Date();
-        const tahun = today.getFullYear();
-        const bulan = today.getMonth();
+    const today = new Date();
+    const tahun = today.getFullYear();
+    const bulan = today.getMonth();
 
-        const awalBulan = new Date(tahun, bulan, 1);
-        const akhirBulan = new Date(tahun, bulan + 1, 0);
+    const awalBulan = new Date(tahun, bulan, 1);
+    const akhirBulan = new Date(tahun, bulan + 1, 0);
 
-        const hariPertama = (awalBulan.getDay() + 6) % 7; // ubah agar Senin mulai dari index 1
-        const totalHari = akhirBulan.getDate();
+    const hariPertama = (awalBulan.getDay() + 6) % 7; // Mulai dari Senin
+    const totalHari = akhirBulan.getDate();
 
-        let kalender = `
-            <div class="card shadow-sm">
-                <div class="card-header bg-light text-center fw-bold">
-                    ${bulanIndonesia[bulan]} ${tahun}
-                </div>
-                <div class="card-body p-2">
-                    <table class="table table-bordered text-center small mb-0">
-                        <thead class="table-secondary">
-                            <tr>${hari.map(h => `<th>${h}</th>`).join('')}</tr>
-                        </thead>
-                        <tbody>
-        `;
+    let kalender = `
+        <div class='card shadow-sm'>
+            <div class='card-header bg-light text-center fw-bold'>
+                ${bulanIndonesia[bulan]} ${tahun}
+            </div>
+            <div class='card-body p-2'>
+                <table class='table table-bordered text-center small mb-0'>
+                    <thead class='table-secondary'>
+                        <tr>${hari.map(h => `<th>${h}</th>`).join('')}</tr>
+                    </thead>
+                    <tbody>
+    `;
 
-        let tanggal = 1;
-        for (let i = 0; i < 6; i++) {
-            kalender += '<tr>';
-            for (let j = 0; j < 7; j++) {
-                if (i === 0 && j < hariPertama) {
-                    kalender += '<td></td>';
-                } else if (tanggal > totalHari) {
-                    kalender += '<td></td>';
-                } else {
-                    kalender += `<td>${tanggal}</td>`;
-                    tanggal++;
-                }
+    let tanggal = 1;
+    for (let i = 0; i < 6; i++) {
+        kalender += '<tr>';
+        for (let j = 0; j < 7; j++) {
+            if (i === 0 && j < hariPertama) {
+                kalender += '<td></td>';
+            } else if (tanggal > totalHari) {
+                kalender += '<td></td>';
+            } else {
+                kalender += `<td>${tanggal}</td>`;
+                tanggal++;
             }
-            kalender += '</tr>';
-            if (tanggal > totalHari) break;
         }
+        kalender += '</tr>';
+        if (tanggal > totalHari) break;
+    }
 
-        kalender += '</tbody></table></div></div>';
-        document.getElementById('kalender-bulan-ini').innerHTML = kalender;
-    });
+    kalender += '</tbody></table></div></div>';
+    document.getElementById('kalender-bulan-ini').innerHTML = kalender;
+});
 </script>
 @endpush

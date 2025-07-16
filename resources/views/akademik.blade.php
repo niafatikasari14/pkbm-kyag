@@ -32,7 +32,7 @@
     }
 </style>
 
-<div class="container my-5">
+<div class="container my-3">
     <h3 class="mb-5 text-center fade-in">Halaman Akademik</h3>
 
     <div class="row fade-in">

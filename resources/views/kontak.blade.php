@@ -1,7 +1,7 @@
 @extends('mylayout')
 @section('content')
 
-<div class="container my-5">
+<div class="container my-3">
     <h3 class="mb-4 text-center">Hubungi Kami</h3>
     <div class="row">
         <!-- Google Maps -->

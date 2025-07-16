@@ -10,7 +10,7 @@
     }
 </style>
 
-<div class="container my-5">
+<div class="container my-3">
 
 <!-- Struktur Organisasi -->
 <section class="mb-5">

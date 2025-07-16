@@ -1,7 +1,7 @@
 @extends('mylayout')
 @section('content')
 
-<div class="container my-5">
+<div class="container my-3">
     <h2 class="mb-4 text-center fade-in">Berita</h2>
 
 <div class="row">

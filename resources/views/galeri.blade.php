@@ -1,12 +1,12 @@
 @extends('mylayout')
 @section('content')
 
-<div class="container my-5">
+<div class="container my-3">
     <h2 class="mb-4 text-center">Galeri Kegiatan PKBM Ky Ageng Giri</h2>
 
 <!-- Galeri Foto -->
 <div class="mb-5">
-    <h3 class="mb-4">Galeri Foto Kegiatan</h3>
+
     <div class="row">
         @forelse ($fotos as $foto)
             <div class="col-md-3 mb-4">

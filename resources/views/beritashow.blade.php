@@ -1,7 +1,7 @@
 @extends('mylayout')
 
 @section('content')
-<div class="container my-5">
+<div class="container my-3">
     <h2 class="mb-3">{{ $berita->judul_berita}}</h2>
 
     <p class="text-muted">
