@@ -2,8 +2,9 @@
 <html lang="id">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
     <title>{{ env('APP_NAME', 'PKBM Ky Ageng Giri') }}</title>
 
@@ -102,12 +103,23 @@
             </ul>
         </div>
 
-        <!-- Login button -->
+        <!-- Login button (responsive) -->
+        <!-- Untuk layar besar (desktop) -->
         <div class="d-none d-lg-block">
             <a href="{{ route('filament.admin.auth.login') }}" class="btn btn-outline-light ms-3">
                 <i class="bi bi-box-arrow-in-right me-1"></i> Login
             </a>
         </div>
+
+        <!-- Untuk layar kecil (mobile/tablet) di dalam menu navbar collapse -->
+        <ul class="navbar-nav d-lg-none mt-3">
+            <li class="nav-item">
+                <a class="nav-link text-white btn btn-outline-light w-100" href="{{ route('filament.admin.auth.login') }}">
+                    <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                </a>
+            </li>
+        </ul>
+
     </div>
 </nav>
 
